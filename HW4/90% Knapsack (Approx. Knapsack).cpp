@@ -6,9 +6,6 @@
 #pragma GCC Optimize("O3")
 #pragma GCC Optimize("unroll-loops")
 
-
-//reference: //https://www.geeksforgeeks.org/printing-items-01-knapsack///
-
 typedef long long int ll;
 
 const int kBuf = 131072;
@@ -47,7 +44,6 @@ ll max(ll a, ll b){
 struct Items{
 	ll value;
 	ll weight;
-//	ll v_approx;
 };
 
 int count = 0;
@@ -86,12 +82,7 @@ ll knapsack(ll W, ll wt[], ll val[], ll n){
 
 
 ll Knapsack(struct Items arr[], ll W, ll n, ll V){
-	ll A[n+3][V+2];
-//	ll A[1003][V+10000];
-//	A[0][0] = 0;
-//	for(int i = 0; i<=n; i++){
-//		A[i][0] = 0;
-//	}
+	ll A[n+5][V+5];
 	for(int i = 0; i<=V; i++){
 		A[0][i] = W+1;
 	}
@@ -104,21 +95,12 @@ ll Knapsack(struct Items arr[], ll W, ll n, ll V){
 	}
 	
 	ll OPT = 0;
-//	for(int i = 1; i<n+2; i++){
-		for(int j = 0; j<=V; j++){
-			if(A[n][j] <= W && OPT <= j){
-					OPT = j;
-				}
-		}
-	//}
-//	return OPT;
-//	for(int i = 0; i<n; i++){
-//		for(int j = 0; j<=V; j++){
-//			printf("%d ", A[n][j]);
-			//printf("\n");
-//		}
-	//	printf("\n");
-//	}
+	for(int j = 0; j<=V; j++){
+		if(A[n][j] <= W && OPT <= j)
+			OPT = j;
+				
+	}
+
 	ll p = OPT;
 	for(int i = n+2; i>=2; i--){
 		if(arr[i].value <= p){
@@ -135,27 +117,18 @@ ll Knapsack(struct Items arr[], ll W, ll n, ll V){
 int main(){
 	ll n, W;
 	Input(n);
-//    scanf("%lld %lld", &n, &W);
 	Input(W);
-//	ll V = 0;
 	ll LB = 0;
-//	ll V_approx = 0;
 	Items item[1004];
 	ll val[1001], wt[1001];
 	for(int i = 0; i<n; i++){
 		Input(item[i+2].value);
         Input(item[i+2].weight);
-//      scanf("%lld %lld", &item[i+2].value, &item[i+2].weight);
 		val[i] = item[i+2].value;
 		wt[i] = item[i+2].weight;  
-		//Input(item[i+2].value);
-		//Input(item[i+2].weight);
-//		V = V + item[i+2].value;
 		if(LB < item[i+2].value)
 			LB = item[i+2].value;
 	}
-///	float err = 0.1;
-///	float K = (err*LB)/n;
 	ll B = 0;
 	for(int i = 0; i<n; i++){
 		ll temp = floor(item[i+2].value/(0.1*LB));
