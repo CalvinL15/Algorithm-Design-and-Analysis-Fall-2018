@@ -6,11 +6,6 @@
 #pragma GCC Optimize ("unroll-loops")
 #include <unistd.h>
 
-//reference: https://www.geeksforgeeks.org/0-1-knapsack-problem-dp-10/
-//reference: www.geeksforgeeks.org/meet-in-the-middle/
-//reference: https://community.topcoder.com/tc?module=HSProblemSolution&cr=21111148&rd=10763&pm=6742
-//reference: https://www.geeksforgeeks.org/implementation-of-0-1-knapsack-using-branch-and-bound/
-
 using namespace std;
 typedef long long ll;
 
