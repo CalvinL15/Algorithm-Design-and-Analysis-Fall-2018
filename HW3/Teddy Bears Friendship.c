@@ -3,8 +3,6 @@
 #pragma GCC Optimize ("Ofast") 
 #include <limits.h>
 
-//reference: https://www.geeksforgeeks.org/dijkstras-algorithm-for-adjacency-list-representation-greedy-algo-8/
-
 typedef long long int ll;
 
 struct adjacency 
