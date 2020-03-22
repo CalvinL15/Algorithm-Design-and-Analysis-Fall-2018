@@ -2,7 +2,6 @@
 #include <stdio.h> 
 #include <stdlib.h> 
 
-//reference: https://www.geeksforgeeks.org/prims-mst-for-adjacency-list-representation-greedy-algo-6/
 typedef long long int ll;
 
 ll GCD(ll a,ll b){
