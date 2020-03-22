@@ -3,8 +3,7 @@
 #include <string.h>
 #include<bits/stdc++.h> 
 #pragma optimize "O3"
- 
-// references : https://www.geeksforgeeks.org/count-number-ways-reach-destination-maze/
+
 typedef long long int lld;
 typedef unsigned long long int ull;
 
