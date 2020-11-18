@@ -5,8 +5,6 @@
 #pragma optimize "O3"
 
 typedef long long int ll;
-
-//This code closely follows this website: https://github.com/nextco/cormen-fft/blob/master/pm-divide-and-conquer.cpp
  
 void karatsubamult(ll *result, const ll *poly1, const ll *poly2, int k){
     ll t0[k], t1[k], r[k<<1];
