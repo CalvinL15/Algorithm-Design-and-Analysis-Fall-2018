@@ -10,9 +10,8 @@ struct P{
 };
 
 struct P dot[RANGE];
-int RECURSE(struct P arr[], int a, int b, int c){
-	int p1 = a-b+1; //bagian 1
-	int p2 = c-a; //bagian 2
+int calculate(struct P arr[], int a, int b, int c){
+	int p1 = a-b+1, p2 = c-a;
 	struct P left[p1], right[p2];
 	ull rx[p2+1] = {0}, ry[p2+1] = {0}, sav[p2+1] = {0};
 	for(int i = 0; i<p2; i++){
@@ -56,13 +55,13 @@ int RECURSE(struct P arr[], int a, int b, int c){
     }
 }
 
-void mergesort(struct P arr[], int kiri, int kana){
-	int tengah;
-	if(kiri < kana){
-		tengah = (kana-kiri)/2 + kiri;
-		mergesort(arr, kiri, tengah);
-		mergesort(arr, tengah+1, kana);
-		RECURSE(arr, tengah, kiri, kana); 
+void mergesort(struct P arr[], int l, int r){
+	int c;
+	if(l < r){
+		c = (r-l)/2 + c;
+		mergesort(arr, l, c);
+		mergesort(arr, c+1, r);
+		calculate(arr, c, l, r); 
 	}
 }
 
